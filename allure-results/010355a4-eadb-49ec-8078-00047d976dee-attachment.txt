@@ -1,0 +1,101 @@
+
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                        Starting Execution: '2 out of 14' test cases in the current suite                                        
+                                          Test Method: 'manualinvoicetest.manualinvoicewitinvalidpnrs'                                          
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[ReportManager] Target URL: "http://192.168.1.60:8080/odeysysadmin" @13-07-2025 12:55:45.0545 PM
+[ReportManager] Initial URL: "http://192.168.1.60/auth/login?isLogged=false&isCoreSystem=true" @13-07-2025 12:55:45.0570 PM
+[ReportManager] Navigate to url "http://192.168.1.60:8080/odeysysadmin". @13-07-2025 12:55:45.0776 PM
+[ReportManager] Type "e.saady" into "Username *". @13-07-2025 12:55:45.0923 PM
+[ReportManager] Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true". @13-07-2025 12:55:45.0950 PM
+[ReportManager] Type "qqE6)Cxp6>B8" into "Password * Forgot Password?". @13-07-2025 12:55:46.0086 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:55:51.0282 PM
+[ReportManager] Click "By.xpath: //span[@class='p-button-label']". @13-07-2025 12:55:51.0387 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:55:56.0619 PM
+[ReportManager] Click "Dashboard". @13-07-2025 12:55:56.0755 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:55:58.0332 PM
+[ReportManager] Click "Booking-Mid Office ". @13-07-2025 12:55:58.0448 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:55:58.0611 PM
+[ReportManager] Click "Manual Booking Invoice". @13-07-2025 12:55:58.0801 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0802 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0802 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0802 PM
+[ReportManager] Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json". @13-07-2025 12:55:58.0803 PM
+[ReportManager] Successfully created attachment 'Test Data - JSON' @13-07-2025 12:55:58.0804 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0804 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0804 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0816 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0816 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0826 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0827 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0856 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0857 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0865 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0866 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0884 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0884 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0901 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0901 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0912 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0912 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0929 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0929 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0938 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0940 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0955 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0955 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0970 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0970 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0990 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:58.0995 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0021 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0022 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0035 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0035 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0050 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0051 PM
+[ReportManager] File Action "DoesFileExist" successfully performed. With the following test data "File Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0063 PM
+[ReportManager] File Action "GetAbsolutePath" successfully performed. With the following test data "Relative Folder Path: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json"". @13-07-2025 12:55:59.0063 PM
+[ReportManager] Setting "skipTestsWithLinkedIssues" property with "true". @13-07-2025 12:56:00.0417 PM
+[ReportManager] Select "Test" from "By.xpath: //select[@id='branchListId']". @13-07-2025 12:56:01.0952 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:02.0142 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:03.0452 PM
+[ReportManager] Click "By.xpath: //input[@id='startingFrom_1']". @13-07-2025 12:56:03.0575 PM
+[ReportManager] Type "CAI" into "Starting From". @13-07-2025 12:56:03.0809 PM
+[ReportManager] Key press "ENTER" against "Starting From". @13-07-2025 12:56:04.0408 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:04.0632 PM
+[ReportManager] Click "Going To". @13-07-2025 12:56:04.0793 PM
+[ReportManager] Type "DXB" into "Going To". @13-07-2025 12:56:04.0910 PM
+[ReportManager] Key press "ENTER" against "Going To". @13-07-2025 12:56:05.0353 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:05.0552 PM
+[ReportManager] Click "Date Of Journey". @13-07-2025 12:56:05.0696 PM
+[ReportManager] Setting "skipTestsWithLinkedIssues" property with "true". @13-07-2025 12:56:05.0772 PM
+[ReportManager] Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']". @13-07-2025 12:56:05.0996 PM
+[ReportManager] Setting "skipTestsWithLinkedIssues" property with "true". @13-07-2025 12:56:06.0053 PM
+[ReportManager] Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']". @13-07-2025 12:56:06.0417 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:06.0622 PM
+[ReportManager] Click "30". @13-07-2025 12:56:06.0737 PM
+[ReportManager] Setting "skipTestsWithLinkedIssues" property with "true". @13-07-2025 12:56:06.0857 PM
+[ReportManager] Select "1" from "By.id: noOfAdults". @13-07-2025 12:56:07.0179 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:07.0400 PM
+[ReportManager] Click "Airline". @13-07-2025 12:56:07.0522 PM
+[ReportManager] Type "Air Cairo" into "Airline". @13-07-2025 12:56:07.0724 PM
+[ReportManager] Type "" into "Airline". @13-07-2025 12:56:07.0814 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:08.0100 PM
+[ReportManager] Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']". @13-07-2025 12:56:08.0218 PM
+[ReportManager] Type "2000" into "Adult Base Fare". @13-07-2025 12:56:09.0569 PM
+[ReportManager] Type "1000" into "Adult Tax". @13-07-2025 12:56:09.0744 PM
+[ReportManager] Type "500" into "Adult MarkUp". @13-07-2025 12:56:09.0922 PM
+[ReportManager] Type "300" into "Adult Service Charge". @13-07-2025 12:56:10.0084 PM
+[ReportManager] Type "100" into "Adult Discount". @13-07-2025 12:56:10.0260 PM
+[ReportManager] Type "hat" into "GDS PNR". @13-07-2025 12:56:10.0401 PM
+[ReportManager] Type "has" into "Airline PNR". @13-07-2025 12:56:10.0545 PM
+[ReportManager] Type "1" into "Flight No". @13-07-2025 12:56:10.0709 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:10.0940 PM
+[ReportManager] Click "ADD Traveller". @13-07-2025 12:56:11.0110 PM
+[ReportManager] Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual". @13-07-2025 12:56:11.0154 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:11.0375 PM
+[ReportManager] Click "By.xpath: //p[@class='drpdwn_usr']". @13-07-2025 12:56:11.0511 PM
+[ReportManager] Moved the mouse to the middle of the element. @13-07-2025 12:56:11.0701 PM
+[ReportManager] Click "Logout". @13-07-2025 12:56:11.0853 PM

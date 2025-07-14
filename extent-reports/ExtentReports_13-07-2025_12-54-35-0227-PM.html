@@ -1,0 +1,4553 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent Reports</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Extent Reports - Powered by SHAFT_Engine</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 13, 2025 12:54:33 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 13, 2025 12:54:33 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 13, 2025 01:01:45 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>14</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>14</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='2%'><b>14</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>491</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"manualinvoicetest.manualinvoicewithvalid":50.249,"manualinvoicetest.manualinvoicewitinvalidpnrs":26.579,"manualinvoicetest.manualinvoicewithemptyairline":29.397,"manualinvoicetest.manualinvoicewithinvalidairline":27.431,"manualinvoicetest.manualinvoicewithinvalidstartinglocation":21.665,"manualinvoicetest.manualinvoicewithinvaliddestinationlocation":19.877,"manualinvoicetest.manualinvoicewithinvalidlightnumber":28.013,"manualinvoicetest.manualinvoicewithexlsfilepath":27.045,"manualinvoicetest.manualinvoicewithejpgfilepath":52.578,"manualinvoicetest.manualinvoicewithemptyfaredetails":25.545,"manualinvoicetest.manualinvoicewwithinvalidfaredetails":23.689,"manualinvoicetest.manualinvoicewithemptyfilepath":26.827,"manualinvoicetest.manualinvoicewithinvalidbasefare":24.36,"manualinvoicetest.manualinvoicewithbasefarehasspace":27.314
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 14,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 14,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 491
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithvalid</p>
+            <p class="text-sm">
+              <span>12:54:54 PM</span> / <span>00:00:50:249</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithvalid</h5>
+<span class='badge badge-success'>07.13.2025 12:54:54 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:55:45 PM</span>
+<span class='badge badge-default'>00:00:50:249</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:54:55 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:54:58 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:54:58 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:54:58 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\validmanualinvoiceinfo.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:54:58 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-0'></div>
+ <script>
+  function jsonTreeCreate0() { 
+   document.getElementById('code-block-json-0').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate0();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:01 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:03 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:03 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:03 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:04 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:04 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:04 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:05 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:05 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:05 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:06 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:06 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:06 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:06 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:07 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:07 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:09 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:09 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:09 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:10 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:10 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:10 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:10 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:11 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:11 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:44 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/passengerDetailManual?isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:44 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:45 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:55:45 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewitinvalidpnrs</p>
+            <p class="text-sm">
+              <span>12:55:45 PM</span> / <span>00:00:26:579</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewitinvalidpnrs</h5>
+<span class='badge badge-success'>07.13.2025 12:55:45 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:56:11 PM</span>
+<span class='badge badge-default'>00:00:26:579</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:45 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:45 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:45 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:46 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:51 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:56 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:58 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:58 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:58 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidgdsandpnrmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:55:58 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-1'></div>
+ <script>
+  function jsonTreeCreate1() { 
+   document.getElementById('code-block-json-1').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hat",
+  "airlinepnr": "has",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate1();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:01 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:03 PM</td>
+        <td>
+          Click "By.xpath: //input[@id='startingFrom_1']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:03 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:04 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:04 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:04 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:05 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:05 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:05 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:06 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:06 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:07 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:07 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:07 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:07 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:08 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:09 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:09 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:09 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:10 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:10 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:10 PM</td>
+        <td>
+          Type "hat" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:10 PM</td>
+        <td>
+          Type "has" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:10 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:11 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:11 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:11 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:11 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:56:11 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithemptyairline</p>
+            <p class="text-sm">
+              <span>12:56:11 PM</span> / <span>00:00:29:397</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithemptyairline</h5>
+<span class='badge badge-success'>07.13.2025 12:56:11 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:56:41 PM</span>
+<span class='badge badge-default'>00:00:29:397</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:12 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:12 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:13 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:13 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:18 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:23 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:25 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:25 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:25 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\emptyairlinemanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:25 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-2'></div>
+ <script>
+  function jsonTreeCreate2() { 
+   document.getElementById('code-block-json-2').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename":"",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate2();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:28 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:29 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:30 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:30 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:30 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:30 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:31 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:31 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:32 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:32 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:32 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:33 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:33 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:33 PM</td>
+        <td>
+          Type into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:33 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:33 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:35 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:36 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:36 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:36 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:40 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/passengerDetailManual?isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithinvalidairline</p>
+            <p class="text-sm">
+              <span>12:56:41 PM</span> / <span>00:00:27:431</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithinvalidairline</h5>
+<span class='badge badge-success'>07.13.2025 12:56:41 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:57:08 PM</span>
+<span class='badge badge-default'>00:00:27:431</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:41 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:42 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:47 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:52 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:54 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:54 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:54 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidairlinemanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:54 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-3'></div>
+ <script>
+  function jsonTreeCreate3() { 
+   document.getElementById('code-block-json-3').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename":"sssss",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate3();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:56 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:58 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:58 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:59 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:59 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:59 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:56:59 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:00 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:00 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:00 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:01 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:01 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:01 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:01 PM</td>
+        <td>
+          Type "sssss" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:01 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:02 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:03 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:03 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:03 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:03 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:04 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:04 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:04 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:04 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:04 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:08 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/passengerDetailManual?isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:08 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:08 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:57:08 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithinvalidstartinglocation</p>
+            <p class="text-sm">
+              <span>12:57:08 PM</span> / <span>00:00:21:665</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithinvalidstartinglocation</h5>
+<span class='badge badge-success'>07.13.2025 12:57:08 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:57:30 PM</span>
+<span class='badge badge-default'>00:00:21:665</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:09 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:09 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:09 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:09 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:14 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:20 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:21 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:22 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:22 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidstartinglocationmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:22 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-4'></div>
+ <script>
+  function jsonTreeCreate4() { 
+   document.getElementById('code-block-json-4').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "ssss",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename":"",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate4();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:25 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:27 PM</td>
+        <td>
+          Click "By.xpath: //input[@id='startingFrom_1']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:27 PM</td>
+        <td>
+          Type "ssss" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:28 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:28 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:28 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:29 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:29 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:30 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:30 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:57:30 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithinvaliddestinationlocation</p>
+            <p class="text-sm">
+              <span>12:57:30 PM</span> / <span>00:00:19:877</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithinvaliddestinationlocation</h5>
+<span class='badge badge-success'>07.13.2025 12:57:30 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:57:50 PM</span>
+<span class='badge badge-default'>00:00:19:877</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:30 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:31 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:31 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:31 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:36 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:42 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:44 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:44 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:44 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invaliddestinationlocationmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:44 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-5'></div>
+ <script>
+  function jsonTreeCreate5() { 
+   document.getElementById('code-block-json-5').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "ssss",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename":"",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate5();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:46 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:48 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:48 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:48 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:48 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:48 PM</td>
+        <td>
+          Type "ssss" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:49 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:49 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithinvalidlightnumber</p>
+            <p class="text-sm">
+              <span>12:57:50 PM</span> / <span>00:00:28:013</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithinvalidlightnumber</h5>
+<span class='badge badge-success'>07.13.2025 12:57:50 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:58:18 PM</span>
+<span class='badge badge-default'>00:00:28:013</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:50 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:57:56 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:01 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:03 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:03 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:03 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidflightnumbermanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:03 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-6'></div>
+ <script>
+  function jsonTreeCreate6() { 
+   document.getElementById('code-block-json-6').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "sssss"
+}); 
+  }
+  jsonTreeCreate6();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:05 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:07 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:07 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:07 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:07 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:08 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:08 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:08 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:09 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:09 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:09 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:10 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:10 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:10 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:10 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:10 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:12 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:12 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:12 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:12 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:13 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:13 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:13 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:13 PM</td>
+        <td>
+          Type "sssss" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:13 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:17 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/passengerDetailManual?isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithexlsfilepath</p>
+            <p class="text-sm">
+              <span>12:58:18 PM</span> / <span>00:00:27:045</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithexlsfilepath</h5>
+<span class='badge badge-success'>07.13.2025 12:58:18 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:58:45 PM</span>
+<span class='badge badge-default'>00:00:27:045</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:18 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:19 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:24 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:29 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:31 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:31 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:31 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\xlsfilepathmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:31 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-7'></div>
+ <script>
+  function jsonTreeCreate7() { 
+   document.getElementById('code-block-json-7').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Fstore Report New File Structure.xlsx",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate7();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:34 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:35 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:35 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:36 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:36 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:36 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:37 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:37 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:37 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:38 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:38 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:39 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:39 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:39 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:39 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:39 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:41 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:43 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:43 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:43 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:43 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:43 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:44 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:44 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:44 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:44 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithejpgfilepath</p>
+            <p class="text-sm">
+              <span>12:58:45 PM</span> / <span>00:00:52:578</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithejpgfilepath</h5>
+<span class='badge badge-success'>07.13.2025 12:58:45 PM</span>
+<span class='badge badge-danger'>07.13.2025 12:59:37 PM</span>
+<span class='badge badge-default'>00:00:52:578</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:45 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:46 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:51 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:56 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:58 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:58 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:58 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\jpgfilepathmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:58:58 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-8'></div>
+ <script>
+  function jsonTreeCreate8() { 
+   document.getElementById('code-block-json-8').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\imresizer-1739127998851.jpg",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate8();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:01 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:02 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:02 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:03 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:03 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:03 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:03 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:04 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:04 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:04 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:04 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:05 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:05 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:05 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:05 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:05 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:07 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:36 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:37 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:37 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:37 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:37 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:59:37 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithemptyfaredetails</p>
+            <p class="text-sm">
+              <span>12:59:37 PM</span> / <span>00:00:25:545</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithemptyfaredetails</h5>
+<span class='badge badge-success'>07.13.2025 12:59:37 PM</span>
+<span class='badge badge-danger'>07.13.2025 1:00:03 PM</span>
+<span class='badge badge-default'>00:00:25:545</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:38 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:38 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:38 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:38 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:43 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:49 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:50 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:51 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:51 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\emptyfaredetailsmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:51 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-9'></div>
+ <script>
+  function jsonTreeCreate9() { 
+   document.getElementById('code-block-json-9').innerHTML = JSONTree.create({
+
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare":"",
+  "Adulttaxfare":"",
+  "Adultmarkup":"",
+  "Adultservice":"",
+  "Adultdiscount":"",
+  "gdspnr": "hatemmamdouhee",
+  "airlinepnr": "hasseanaliee",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate9();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:54 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:55 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:55 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:56 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:56 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:56 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:57 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:57 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:58 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:58 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:58 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:58 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:59 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:59 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:59 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:59:59 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:01 PM</td>
+        <td>
+          Type into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:01 PM</td>
+        <td>
+          Type into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:01 PM</td>
+        <td>
+          Type into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:01 PM</td>
+        <td>
+          Type into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:01 PM</td>
+        <td>
+          Type into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:02 PM</td>
+        <td>
+          Type "hatemmamdouhee" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:02 PM</td>
+        <td>
+          Type "hasseanaliee" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:02 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:02 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:02 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:03 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:03 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>1:00:03 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewwithinvalidfaredetails</p>
+            <p class="text-sm">
+              <span>1:00:03 PM</span> / <span>00:00:23:689</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewwithinvalidfaredetails</h5>
+<span class='badge badge-success'>07.13.2025 1:00:03 PM</span>
+<span class='badge badge-danger'>07.13.2025 1:00:27 PM</span>
+<span class='badge badge-default'>00:00:23:689</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:03 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:04 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:04 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:04 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:09 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:15 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:16 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:16 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:16 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidfaredetailsrmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:16 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-10'></div>
+ <script>
+  function jsonTreeCreate10() { 
+   document.getElementById('code-block-json-10').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "sssseeewww",
+  "Adulttaxfare": "sssseeewww",
+  "Adultmarkup": "sssseeewww",
+  "Adultservice": "sssseeewww",
+  "Adultdiscount": "sssseeewww",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate10();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:19 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:20 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:20 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:20 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:21 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:21 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:21 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:22 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:22 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:22 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:22 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:23 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:23 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:23 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:23 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:24 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:25 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:25 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:25 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:25 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:25 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:26 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:27 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>1:00:27 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithemptyfilepath</p>
+            <p class="text-sm">
+              <span>1:00:27 PM</span> / <span>00:00:26:827</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithemptyfilepath</h5>
+<span class='badge badge-success'>07.13.2025 1:00:27 PM</span>
+<span class='badge badge-danger'>07.13.2025 1:00:54 PM</span>
+<span class='badge badge-default'>00:00:26:827</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:27 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:28 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:28 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:28 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:33 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:38 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:40 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:41 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:41 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\emptyfilepathmanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:41 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-11'></div>
+ <script>
+  function jsonTreeCreate11() { 
+   document.getElementById('code-block-json-11').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "",
+  "Adultbasefare": "2000",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate11();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:44 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:45 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:46 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:46 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:46 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:47 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:47 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:47 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:48 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:48 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:49 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:49 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:49 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:50 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:50 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:50 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:51 PM</td>
+        <td>
+          Type "2000" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:51 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:51 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:52 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:52 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:52 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:52 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:53 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:53 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:53 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:53 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:54 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>1:00:54 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithinvalidbasefare</p>
+            <p class="text-sm">
+              <span>1:00:54 PM</span> / <span>00:00:24:360</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithinvalidbasefare</h5>
+<span class='badge badge-success'>07.13.2025 1:00:54 PM</span>
+<span class='badge badge-danger'>07.13.2025 1:01:18 PM</span>
+<span class='badge badge-default'>00:00:24:360</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:54 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:54 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:54 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:00:55 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:00 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:05 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:07 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:07 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:07 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\invalidbasefaremanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:07 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-12'></div>
+ <script>
+  function jsonTreeCreate12() { 
+   document.getElementById('code-block-json-12').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "sssseeewww",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate12();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:09 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:11 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:11 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:11 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:12 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:12 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:12 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:13 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:13 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:13 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:14 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:14 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:14 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:14 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:14 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:15 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:16 PM</td>
+        <td>
+          Type "sssseeewww" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:16 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:16 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:16 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:17 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/flightWidgetManual".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">manualinvoicetest.manualinvoicewithbasefarehasspace</p>
+            <p class="text-sm">
+              <span>1:01:18 PM</span> / <span>00:00:27:314</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">manualinvoicetest.manualinvoicewithbasefarehasspace</h5>
+<span class='badge badge-success'>07.13.2025 1:01:18 PM</span>
+<span class='badge badge-danger'>07.13.2025 1:01:45 PM</span>
+<span class='badge badge-default'>00:00:27:314</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Navigate to url "http://192.168.1.60:8080/odeysysadmin".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Type "e.saady" into "Username *".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:18 PM</td>
+        <td>
+          Get current url "http://192.168.1.60/auth/login?error=&isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:19 PM</td>
+        <td>
+          Type "qqE6)Cxp6>B8" into "Password * Forgot Password?".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:24 PM</td>
+        <td>
+          Click "By.xpath: //span[@class='p-button-label']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:29 PM</td>
+        <td>
+          Click "Dashboard".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:31 PM</td>
+        <td>
+          Click "Booking-Mid Office ".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:31 PM</td>
+        <td>
+          Click "Manual Booking Invoice".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:31 PM</td>
+        <td>
+          Loaded Test Data: "C:\Users\Hatem Mamdouh\Desktop\New folder\ndctest\src\test\resources\spacebasefaremanualinvoice.json".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:31 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-13'></div>
+ <script>
+  function jsonTreeCreate13() { 
+   document.getElementById('code-block-json-13').innerHTML = JSONTree.create({
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "1234567890 1234567890",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}); 
+  }
+  jsonTreeCreate13();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:34 PM</td>
+        <td>
+          Select "Test" from "By.xpath: //select[@id='branchListId']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:35 PM</td>
+        <td>
+          Click "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:35 PM</td>
+        <td>
+          Type "CAI" into "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:36 PM</td>
+        <td>
+          Key press "ENTER" against "Starting From".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:36 PM</td>
+        <td>
+          Click "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:36 PM</td>
+        <td>
+          Type "DXB" into "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:37 PM</td>
+        <td>
+          Key press "ENTER" against "Going To".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:37 PM</td>
+        <td>
+          Click "Date Of Journey".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:37 PM</td>
+        <td>
+          Select "2025" from "By.xpath: //select[@class='ui-datepicker-year']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:37 PM</td>
+        <td>
+          Select "Aug" from "By.xpath: //select[@class='ui-datepicker-month']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:38 PM</td>
+        <td>
+          Click "30".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:38 PM</td>
+        <td>
+          Select "1" from "By.id: noOfAdults".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:38 PM</td>
+        <td>
+          Click "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:38 PM</td>
+        <td>
+          Type "Air Cairo" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:38 PM</td>
+        <td>
+          Type "" into "Airline".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:39 PM</td>
+        <td>
+          Click "By.xpath: //form[@id='flightWidgetFormOneWay']//div[@class='uploadBtn']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:40 PM</td>
+        <td>
+          Type "1234567890 1234567890" into "Adult Base Fare".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:40 PM</td>
+        <td>
+          Type "1000" into "Adult Tax".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:40 PM</td>
+        <td>
+          Type "500" into "Adult MarkUp".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:40 PM</td>
+        <td>
+          Type "300" into "Adult Service Charge".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:41 PM</td>
+        <td>
+          Type "100" into "Adult Discount".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:41 PM</td>
+        <td>
+          Type "hatemmamdouh" into "GDS PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:41 PM</td>
+        <td>
+          Type "hasseanali" into "Airline PNR".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:41 PM</td>
+        <td>
+          Type "1" into "Flight No".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:41 PM</td>
+        <td>
+          Click "ADD Traveller".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:45 PM</td>
+        <td>
+          Get current url "http://192.168.1.60:8080/odeysysadmin/flight/passengerDetailManual?isCoreSystem=true".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:45 PM</td>
+        <td>
+          Click "By.xpath: //p[@class='drpdwn_usr']".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:01:45 PM</td>
+        <td>
+          Click "Logout".
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>1:01:45 PM</td>
+        <td>
+          Test Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

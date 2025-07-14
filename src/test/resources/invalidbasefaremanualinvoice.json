@@ -1,0 +1,19 @@
+{
+  "branchname": "Test",
+  "source": "CAI",
+  "destination": "DXB",
+  "travelmonth": "Aug",
+  "travelyear": "2025",
+  "travelday": "30",
+  "numberofaults": "1",
+  "airlinename": "Air Cairo",
+  "filepath": "C:\\Users\\Hatem Mamdouh\\Downloads\\Add Test Case uideline.pdf",
+  "Adultbasefare": "sssseeewww",
+  "Adulttaxfare": "1000",
+  "Adultmarkup": "500",
+  "Adultservice": "300",
+  "Adultdiscount": "100",
+  "gdspnr": "hatemmamdouh",
+  "airlinepnr": "hasseanali",
+  "flightno": "1"
+}
