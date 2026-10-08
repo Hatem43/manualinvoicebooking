@@ -1,1 +1,1 @@
-Automation testing for Manual booking invoice for all fight trips using Shaft
+Automation testing for Manual booking invoice using Shaft
